@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 缩放值为 理想视口 ／ 布局视口 -->
+	<!-- 缩放的是物理像素逻辑像素比，也就是 devicePixelRatio = 物理像素（分辨率） ／  可视窗口（屏幕宽）
+	物理像素始终不变 -->
+	<!-- 本来是1:2 -> 缩放后变成1：1 -->
+	<meta id="meta" name="viewport" content="width=device-width, initial-scale=2">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+		}
+		div{
+			background-color: blue;
+		}
+		#scale1{
+			width: 50px;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		#scaleHalf{
+			width: 25px;
+			height: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div id="scale1"></div>
+	<div id="scaleHalf"></div>
+	<script>
+		const meta = document.querySelector('#meta')
+		window.onclick = function() {
+			meta.setAttribute('content', 'width=device-width,initial-scale=1')
+		}
+	</script>
+</body>
+</html>
